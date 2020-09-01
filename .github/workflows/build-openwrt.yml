@@ -138,8 +138,8 @@ jobs:
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: |
-            path/${{ env.FIRMWARE }}
-            path/${{ github.workspace }}/.config
+            ${{ env.FIRMWARE }}
+            ${{ github.workspace }}/.config
 
     - name: Upload firmware to cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
