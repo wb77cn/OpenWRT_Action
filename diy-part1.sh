@@ -24,3 +24,5 @@ git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverc
 #京东签到插件及其node-request依赖
 git clone https://github.com/jerrykuku/node-request  package/node-request 
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
+#clash插件
+git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
