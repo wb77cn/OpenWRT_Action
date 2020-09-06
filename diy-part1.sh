@@ -26,3 +26,5 @@ git clone https://github.com/jerrykuku/node-request  package/node-request
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
 #clash插件
 git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
+#mentohust
+git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/MentoHUST
