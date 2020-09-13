@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build RM2100-OpenWrt
+name: Build RedMi_RM2100-OpenWrt
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
     branches:
       - main
     paths:
-      - 'rm2100.config'
+      - 'redmi_rm2100.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -28,7 +28,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: rm2100.config
+  CONFIG_FILE: redmi_rm2100.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
