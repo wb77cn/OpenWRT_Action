@@ -4,6 +4,7 @@
 
 - [X]  PHICOMM K2T
 - [X]  XiaoMi RedMi AC2100
+- [X]  XiaoMi AC2100
 
 所编译的固件不含任何插件，所有插件和所需依赖都单独编译并已上传到[openwrt-packages](https://gitee.com/sakura_bot/openwrt-packages)
 
