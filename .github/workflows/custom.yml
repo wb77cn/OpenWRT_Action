@@ -134,6 +134,8 @@ jobs:
     - name: Upload firmware to cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled()
       run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
         git config --global http.postBuffer 524288000
         git checkout -b custom origin/custom
         cd openwrt/bin
