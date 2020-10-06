@@ -131,7 +131,7 @@ jobs:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: Upload firmware to cowtransfer
+    - name: Upload firmware to GitHub
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled()
       run: |
         git config --global user.email "github-actions@github.com"
@@ -141,4 +141,4 @@ jobs:
         cd openwrt/bin
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
-        git push custom:custom
+        git push
