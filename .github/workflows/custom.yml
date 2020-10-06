@@ -137,8 +137,10 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
         git config --global http.postBuffer 524288000
-        git checkout -b custom origin/custom
         cd openwrt/bin
+        git init
+        git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
+        git checkout -b custom origin/custom
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push
