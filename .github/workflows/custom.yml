@@ -26,7 +26,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_BRANCH: custom
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: custom.config
   DIY_P1_SH: diy-part1.sh
@@ -110,11 +110,15 @@ jobs:
       run: df -hT
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@main
+      uses: svenstaro/upload-release-action@2.1.1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin
+        repo_token: ${{ secrets.GITHUB_TOKEN}}
+        file: openwrt/bin/*.bin
+        tag: Auto_Bin_$REPO_BRANCH
+        overwrite: true
+        file_glob: true
+        prerelease: true
 
     - name: Organize files
       id: organize
@@ -125,11 +129,15 @@ jobs:
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
     - name: Upload firmware directory
-      uses: actions/upload-artifact@main
+      uses: svenstaro/upload-release-action@2.1.1
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
+        repo_token: ${{ secrets.GITHUB_TOKEN}}
+        file: ${{ env.FIRMWARE }}/*
+        tag: Auto_Firmware_$REPO_BRANCH
+        overwrite: true
+        file_glob: true
+        prerelease: true
 
     - name: Upload firmware to GitHub
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled()
@@ -137,10 +145,12 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
         git config --global http.postBuffer 524288000
-        cd openwrt/bin
-        git init
+        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action /opt/OpenWRT_Action
+        cd /opt/OpenWRT_Action
+        git remote rm origin
         git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
-        git checkout -b custom origin/custom
+        rm -rf packages && rm -rf targets
+        cp $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push
