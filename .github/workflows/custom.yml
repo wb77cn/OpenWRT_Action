@@ -132,7 +132,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
-        file: $GITHUB_WORKSPACE/openwrt/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
+        file: $GITHUB_WORKSPACE/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
         tag: custom
         overwrite: true
         file_glob: true
