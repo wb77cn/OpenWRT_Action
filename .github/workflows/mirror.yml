@@ -1,0 +1,16 @@
+name:Mirror the Github organization repos to Gitee
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    - name: Mirror the Github organization repos to Gitee
+         uses: Yikun/hub-mirror-action@master
+          with:
+            src: github/Gladtbam
+            dst: gitee/sakura_bot
+            dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+            dst_token: ${{ secrets.GITEE_TOKEN }}
+            white_list: "OpenWRT_Action"
