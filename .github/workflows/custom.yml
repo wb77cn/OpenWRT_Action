@@ -109,27 +109,9 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
-    - name: Upload firmware to GitHub
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled()
-      run: |
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "github-actions"
-        git config --global http.postBuffer 524288000
-        git add .
-        git commit -m "${{ env.FILE_DATE }}提交"
-        git push
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-            github_token: ${{ secrets.GITHUB.TOKEN }}
-            branch: custom
-            directory: $GITHUB_WORKSPACE/openwrt/bin/*
-
-    - name: Zip Bin
+    - name: Upload bin directory
       run: |
         zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip openwrt/bin/*
-
-    - name: Upload bin directory
       uses: svenstaro/upload-release-action@2.1.1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
@@ -160,3 +142,27 @@ jobs:
         file_glob: true
         prerelease: true
 
+    - name: Upload firmware to GitHub
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled()
+      run: |
+        find . -name '*.zip' -type f -print -exec rm -rf {} \;
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git config --global http.postBuffer 524288000
+        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action /opt/OpenWRT_Action
+        cd /opt/OpenWRT_Action
+        git remote rm origin
+        git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
+        git checkout $REPO_BRANCH
+        cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
+        git add .
+        git commit -m "${{ env.FILE_DATE }}提交"
+        git push
+    - name: Mirror the Github organization repos to Gitee
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/Gladtbam
+        dst: gitee/sakura_bot
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        white_list: "OpenWRT_Action"
