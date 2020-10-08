@@ -122,8 +122,8 @@ jobs:
       uses: ad-m/github-push-action@v0.6.0
       with:
             github_token: ${{ secrets.GITHUB.TOKEN }}
-            branch: ${{ REPO_BRANCH }}
-            directory: ${{ GITHUB_WORKSPACE }}/openwrt/bin/*
+            branch: $REPO_BRANCH
+            directory: $GITHUB_WORKSPACE/openwrt/bin/*
 
     - name: Zip Bin
       run: |
