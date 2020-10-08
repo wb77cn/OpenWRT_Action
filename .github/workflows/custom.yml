@@ -109,6 +109,7 @@ jobs:
       run: df -hT
 
     - name: Upload firmware to GitHub
+      if: steps.compile.outputs.status == 'success'
       run: |
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
@@ -121,7 +122,7 @@ jobs:
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
-        git push
+        git push --set-upstream origin $REPO_BRANCH
         cd $GITHUB_WORKSPACE
         zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip $GITHUB_WORKSPACE/openwrt/bin/*
 
