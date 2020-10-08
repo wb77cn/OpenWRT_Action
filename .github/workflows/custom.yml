@@ -124,10 +124,10 @@ jobs:
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push
+        cd $GITHUB_WORKSPACE
+        zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip $GITHUB_WORKSPACE/openwrt/bin/*
 
     - name: Upload bin directory
-      run: |
-        zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip openwrt/bin/*
       uses: svenstaro/upload-release-action@2.1.1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
