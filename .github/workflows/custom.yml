@@ -32,7 +32,7 @@ env:
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_BRANCH: true
   TZ: Asia/Shanghai
@@ -122,20 +122,20 @@ jobs:
       uses: ad-m/github-push-action@v0.6.0
       with:
             github_token: ${{ secrets.GITHUB.TOKEN }}
-            branch: $REPO_BRANCH
+            branch: custom
             directory: $GITHUB_WORKSPACE/openwrt/bin/*
 
     - name: Zip Bin
       run: |
-        zip -r OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}.zip openwrt/bin/*
+        zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip openwrt/bin/*
 
     - name: Upload bin directory
       uses: svenstaro/upload-release-action@2.1.1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
-        file: openwrt/OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}.zip
-        tag: $REPO_BRANCH
+        file: openwrt/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
+        tag: custom
         overwrite: true
         file_glob: true
         prerelease: true
@@ -146,7 +146,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        zip OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}.zip *
+        zip OpenWrt_firmware_${{ env.DEVICE_NAME }}.zip *
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
     - name: Upload firmware directory
@@ -154,8 +154,8 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
-        file: ${{ env.FIRMWARE }}/OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}.zip
-        tag: $REPO_BRANCH
+        file: ${{ env.FIRMWARE }}/OpenWrt_firmware_${{ env.DEVICE_NAME }}.zip
+        tag: custom
         overwrite: true
         file_glob: true
         prerelease: true
