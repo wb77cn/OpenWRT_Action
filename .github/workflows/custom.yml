@@ -118,6 +118,7 @@ jobs:
         cd /opt/OpenWRT_Action
         git remote rm origin
         git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
+        git tag -d $REPO_BRANCH
         git checkout $REPO_BRANCH
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
