@@ -115,7 +115,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
         file: openwrt/bin/*.bin
-        tag: Bin_$REPO_BRANCH
+        tag: ${{ REPO_BRANCH }}
         overwrite: true
         file_glob: true
         prerelease: true
@@ -134,7 +134,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
         file: ${{ env.FIRMWARE }}/*
-        tag: Firmware_$REPO_BRANCH
+        tag: ${{ REPO_BRANCH }}
         overwrite: true
         file_glob: true
         prerelease: true
@@ -145,13 +145,13 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
         git config --global http.postBuffer 524288000
-        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action /opt/OpenWRT_Action
-        cd /opt/OpenWRT_Action
-        git remote rm origin
-        git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
-        git checkout $REPO_BRANCH
-        rm -rf packages && rm -rf targets
-        cp $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push
+    - name: GitHub Push
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+            github_token: ${{ secrets.GITHUB.TOKEN }}
+            branch: ${{ REPO_BRANCH }}
+            directory: ${{ GITHUB_WORKSPACE }}/openwrt/bin/*
+
