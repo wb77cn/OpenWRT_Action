@@ -124,15 +124,22 @@ jobs:
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push --set-upstream origin $REPO_BRANCH
+        
+    - name: Zip files
+      id: ZIP
+      if: env.UPLOAD_BIN_DIR == 'true' && ! cancelled ()
+      run: |
         cd $GITHUB_WORKSPACE
         zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip $GITHUB_WORKSPACE/openwrt/bin/*
+        echo "BIN=$PWD" >> $GITHUB_ENV
+        echo "::set-output name=status::success"
 
     - name: Upload bin directory
       uses: svenstaro/upload-release-action@2.1.1
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      if: steps.ZIP.outputs.status == 'success' && !cancelled()
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
-        file: ${{ env.GITHUB_WORKSPACE }}/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
+        file: ${{ env.BIN }}/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
         tag: custom
         overwrite: true
         file_glob: true
