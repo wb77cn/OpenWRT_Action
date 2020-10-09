@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build R2100-OpenWrt
+name: Build K2T-OpenWrt
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
     branches:
       - main
     paths:
-      - 'R2100.config'
+      - 'K2T.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -26,16 +26,14 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_BRANCH: K2T
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: R2100.config
+  CONFIG_FILE: K2T.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -104,18 +102,48 @@ jobs:
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
-        [ -s DEVICE_NAME ] && echo "::set-env name=DEVICE_NAME::_$(cat DEVICE_NAME)"
-        echo "::set-env name=FILE_DATE::_$(date +"%Y%m%d%H%M")"
+        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=$(cat DEVICE_NAME)" >> $GITHUB_ENV
+        echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
     - name: Check space usage
       if: (!cancelled())
       run: df -hT
 
+    - name: Upload firmware to GitHub
+      if: steps.compile.outputs.status == 'success'
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git config --global http.postBuffer 524288000
+        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action /opt/OpenWRT_Action
+        cd /opt/OpenWRT_Action
+        git remote rm origin
+        git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
+        git tag -d $REPO_BRANCH
+        git checkout $REPO_BRANCH
+        cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
+        git add .
+        git commit -m "${{ env.FILE_DATE }}提交"
+        git push --set-upstream origin $REPO_BRANCH
+        
+    - name: Zip files
+      id: ZIP
+      if: env.UPLOAD_BIN_DIR == 'true' && ! cancelled ()
+      run: |
+        cd $GITHUB_WORKSPACE
+        zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip $GITHUB_WORKSPACE/openwrt/bin/*
+        echo "BIN=$PWD" >> $GITHUB_ENV
+        echo "::set-output name=status::success"
+
     - name: Upload bin directory
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      uses: svenstaro/upload-release-action@2.1.1
+      if: steps.ZIP.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin
+        repo_token: ${{ secrets.GITHUB_TOKEN}}
+        file: ${{ env.BIN }}/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
+        tag: K2T
+        overwrite: true
+        file_glob: true
+        prerelease: true
 
     - name: Organize files
       id: organize
@@ -123,24 +151,16 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$PWD"
+        zip OpenWrt_firmware_${{ env.DEVICE_NAME }}.zip *
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
     - name: Upload firmware directory
-      uses: actions/upload-artifact@main
+      uses: svenstaro/upload-release-action@2.1.1
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
-
-    - name: Upload firmware to cowtransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
-        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
-    - name: Upload firmware to WeTransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
+        repo_token: ${{ secrets.GITHUB_TOKEN}}
+        file: ${{ env.FIRMWARE }}/OpenWrt_firmware_${{ env.DEVICE_NAME }}.zip
+        tag: K2T
+        overwrite: true
+        file_glob: true
+        prerelease: true
