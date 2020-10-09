@@ -19,8 +19,8 @@ on:
       - main
     paths:
       - 'R2100.config'
-#  schedule:
-#    - cron: 0 8 * * 5
+  schedule:
+    - cron: 0 0 * * 1
   watch:
     types: [started]
 

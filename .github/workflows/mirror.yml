@@ -2,7 +2,7 @@ name: Mirror the Github organization repos to Gitee
 
 on:
   schedule:
-    - cron: '0 11 * * *' #设置定时任务
+    - cron: '0 7 * * 1' #设置定时任务
   watch:
     types: [started]
 jobs:
