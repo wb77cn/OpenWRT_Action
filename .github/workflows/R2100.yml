@@ -127,7 +127,7 @@ jobs:
         
     - name: Zip files
       id: ZIP
-      if: env.UPLOAD_BIN_DIR == 'true' && ! cancelled ()
+      if: env.UPLOAD_BIN_DIR == 'true' && steps.compile.outputs.status == 'success' && ! cancelled ()
       run: |
         cd $GITHUB_WORKSPACE
         zip -r OpenWrt_bin_${{ env.DEVICE_NAME }}.zip $GITHUB_WORKSPACE/openwrt/bin/*
@@ -147,7 +147,7 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: env.UPLOAD_FIRMWARE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
