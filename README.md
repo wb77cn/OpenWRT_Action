@@ -7,7 +7,7 @@
 - [X]  XiaoMi AC2100
 
 所编译的固件不含任何插件，所有固件、插件和所需依赖都单独编译并已上传到本仓库相应的分支和[Gitee](https://gitee.com/sakura_bot/OpenWRT_Action)
-同时，编译的固件、插件和依赖已打包上传至[Release](https://github.com/Gladtbam/OpenWRT_Action/release)对应的Tag
+同时，编译的固件、插件和依赖已打包上传至[Release](https://github.com/Gladtbam/OpenWRT_Action/releases)对应的Tag
 
 
 [原仓库](https://github.com/P3TERX/Actions-OpenWrt)
