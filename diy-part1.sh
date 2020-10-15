@@ -33,3 +33,4 @@ git clone https://github.com/fw876/helloworld package/helloworld
 git clone https://github.com/Lienol/openwrt-package package/lienol
 git clone https://github.com/kenzok8/openwrt-packages package/kenzo
 git clone https://github.com/kenzok8/small package/small
+git clone https://github.com/CHN-beta/xmurp-ua.git package/xmurp-ua
