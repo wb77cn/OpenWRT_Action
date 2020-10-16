@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Git Env
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git config --global http.postBuffer 524288000
     - name: Mirror the Github organization repos to Gitee
       uses: Yikun/hub-mirror-action@v0.10
       with:
