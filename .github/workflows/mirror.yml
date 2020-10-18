@@ -21,7 +21,6 @@ jobs:
 
         - name: Mirrors
           run: |
-            echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
             git config --global user.email "github-actions@github.com"
             git config --global user.name "github-actions"
             git config --global http.postBuffer 524288000
@@ -29,6 +28,5 @@ jobs:
             git remote -v
             git remote rm origin
             git remote add origin https://sakura_bot:${{ secrets.GITEE_TOKEN }}@gitee.com/sakura_bot/OpenWRT_Action.git
-            git add .
-            git commit -m "${{ env.FILE_DATE }}提交"
+            git remote -v
             git push --all origin
