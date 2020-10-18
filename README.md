@@ -1,15 +1,9 @@
 # 说明
 
-本仓库编译的固件：
+~~所编译的固件不含任何插件，所有固件、插件和所需依赖都单独编译并已上传到本仓库相应的分支和[Gitee](https://gitee.com/sakura_bot/OpenWRT_Action)~~  
+编译的固件、~~插件和依赖~~已打包上传至[Release](https://github.com/Gladtbam/OpenWRT_Action/releases)对应的Tag
 
-- [X]  PHICOMM K2T
-- [X]  XiaoMi RedMi AC2100
-- [X]  XiaoMi AC2100
-
-所编译的固件不含任何插件，所有固件、插件和所需依赖都单独编译并已上传到本仓库相应的分支和[Gitee](https://gitee.com/sakura_bot/OpenWRT_Action)
-同时，编译的固件、插件和依赖已打包上传至[Release](https://github.com/Gladtbam/OpenWRT_Action/releases)对应的Tag
-
-本仓库[Build custom-OpenWrt](https://github.com/Gladtbam/OpenWRT_Action/actions?query=workflow%3A%22Build+custom-OpenWrt%22)使用SSH在线编译，具体使用方法可参考[原仓库中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)或[SSH使用说明](https://github.com/Gladtbam/OpenWRT_Action#ssh%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E),编译完成的固件在[Release\custom](https://github.com/Gladtbam/OpenWRT_Action/releases/tag/custom)中下载
+本仓库[Build OpenWrt](https://github.com/Gladtbam/OpenWRT_Action/actions?query=workflow%3A%22Build+OpenWrt%22)使用SSH在线编译，具体使用方法可参考[原仓库中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)或[SSH使用说明](https://github.com/Gladtbam/OpenWRT_Action#ssh%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E),编译完成的固件在[Release\custom](https://github.com/Gladtbam/OpenWRT_Action/releases/tag/custom)中下载
 
 [原仓库](https://github.com/P3TERX/Actions-OpenWrt)
 
