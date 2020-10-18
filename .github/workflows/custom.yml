@@ -33,6 +33,7 @@ env:
   UPLOAD_BIN_DIR: flase
   UPLOAD_FIRMWARE: true
   UPLOAD_GITHUB: flase
+  UPLOAD_GITEE: flase
   TZ: Asia/Shanghai
 
 jobs:
@@ -122,7 +123,21 @@ jobs:
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
         git push --set-upstream origin $REPO_BRANCH
-        
+
+    - name: Upload firmware to Gitee
+      if: env.UPLOAD_GITEE == 'true' && steps.compile.outputs.status == 'success'
+      run: |
+        git clone -b $REPO_BRANCH https://gitee.com/sakura_bot/OpenWRT_Action.git /opt/OpenWRT_Action_fork
+        cd /opt/OpenWRT_Action_fork
+        git remote rm origin
+        git remote add origin https://sakura_bot:${{ secrets.GITEE_TOKEN }}@gitee.com/sakura_bot/OpenWRT_Action.git
+        git tag -d $REPO_BRANCH
+        git checkout $REPO_BRANCH
+        cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action_fork/
+        git add .
+        git commit -m "${{ env.FILE_DATA }}同步"
+        git push --set-upstream origin $REPO_BRANCH
+
     - name: Zip files
       id: ZIP
       if: env.UPLOAD_BIN_DIR == 'true' && steps.compile.outputs.status == 'success' && ! cancelled ()
