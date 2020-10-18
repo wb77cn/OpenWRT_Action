@@ -8,17 +8,15 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build custom-OpenWrt
+name: Build OpenWrt
 
 on:
   repository_dispatch:
-  release:
-    types: [published]
   push:
     branches:
       - main
     paths:
-      - 'custom.config'
+      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -32,8 +30,9 @@ env:
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: true
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: flase
   UPLOAD_FIRMWARE: true
+  UPLOAD_GITHUB: flase
   TZ: Asia/Shanghai
 
 jobs:
@@ -108,7 +107,7 @@ jobs:
       run: df -hT
 
     - name: Upload firmware to GitHub
-      if: steps.compile.outputs.status == 'success'
+      if: env.UPLOAD_GITHUB == 'true' && steps.compile.outputs.status == 'success'
       run: |
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
