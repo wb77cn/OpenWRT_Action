@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: Build OpenWrt mt7621
 
 on:
   repository_dispatch:
@@ -16,23 +16,23 @@ on:
     branches:
       - main
     paths:
-      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+      - 'mt7621.config'
+  schedule:
+    - cron: 0 0 * * 1
+#  watch:
+#    types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: custom
+  REPO_BRANCH: mt7621
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: custom.config
+  CONFIG_FILE: config/mt7621.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: flase
   UPLOAD_BIN_DIR: flase
-  UPLOAD_FIRMWARE: true
-  UPLOAD_GITHUB: flase
+  UPLOAD_FIRMWARE: flase
+  UPLOAD_GITHUB: true
   TZ: Asia/Shanghai
 
 jobs:
