@@ -31,6 +31,8 @@
     ```
     $ cd /tmp/
     $ wget https://github.com/Gladtbam/OpenWRT_Action/raw/main/opkg.sh
+    $ wget https://gitee.com/sakura_bot/OpenWRT_Action/raw/main/opkg.sh
+     (以上wget命令二选一)
     $ ./opkg.sh
     $ opkg update
     ```
