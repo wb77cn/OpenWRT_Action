@@ -26,7 +26,7 @@
     src/gz routing https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/routing  
     src/gz telephony https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/telephony  
     ```
-    2. 使用本仓库提供的sh脚本
+    2. 使用本仓库提供的sh脚本  
     使用PuTTY或者其他SSH软件进入路由器，执行以下代码，按提示使用脚本
     ```
     $ cd /tmp/  
@@ -37,7 +37,9 @@
     $ opkg update  
     ```
 - 注：由于未上传公钥，本仓库作为软件源进行`opkg update`时，无法通过签名校验，因此需要关闭校验。  
-    方法1关闭签名校验，执行`sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf`  
+
+    关闭签名校验方法，执行`sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf`(方法2自动关闭校验)  
+
     本人承诺未向源码添加任何危险代码，所有源码都是通过[Github Action](https://github.com/features/actions)从原存储库远程下载  
     如若由于关闭opkg签名校验和使用本仓库所造成的损失，本人概不负责  
 
