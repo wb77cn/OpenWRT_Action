@@ -9,7 +9,38 @@
 
 [原仓库中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-## SSH使用说明
+## 作为第三方软件源使用本仓库
+
+可以将本仓库作为一个第三方软件源使用  
+支持的固件有：
+
+- [X] MT7621系列
+
+- 使用方法 ：
+    1. 手动修改`/etc/opkg/customfeeds.conf`文件，将下列添加进去
+    ```
+    src/gz base https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/base
+    src/gz freifunk https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/freifunk
+    src/gz luci https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/luci
+    src/gz packages https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/packages
+    src/gz routing https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/routing
+    src/gz telephony https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/telephony
+    ```
+    2. 使用本仓库提供的sh脚本
+    使用PuTTY或者其他SSH软件进入路由器，执行以下代码，按提示使用脚本
+    ```
+    $ cd /tmp/
+    $ wget https://github.com/Gladtbam/OpenWRT_Action/raw/main/opkg.sh
+    $ ./opkg.sh
+    $ opkg update
+    ```
+- 注：由于未上传公钥，本仓库作为软件源进行`opkg update`时，无法通过签名校验，因此需要关闭校验。  
+    方法1关闭签名校验，执行`sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf`  
+    本人承诺未向源码添加任何危险代码，所有源码都是通过[Github Action](https://github.com/features/actions)从原存储库远程下载  
+    如若由于关闭opkg签名校验和使用本仓库所造成的损失，本人概不负责  
+
+### SSH使用说明
+
 点击右上角star，在触发工作流程后，在 Actions 日志页面等待执行到SSH connection to Actions步骤，会出现类似下面的信息：
 ```
 To connect to this session copy-n-paste the following into a terminal or browser:
