@@ -19,22 +19,22 @@
 - 使用方法 ：
     1. 手动修改`/etc/opkg/customfeeds.conf`文件，将下列添加进去
     ```
-    src/gz base https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/base
-    src/gz freifunk https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/freifunk
-    src/gz luci https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/luci
-    src/gz packages https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/packages
-    src/gz routing https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/routing
-    src/gz telephony https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/telephony
+    src/gz base https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/base  
+    src/gz freifunk https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/freifunk  
+    src/gz luci https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/luci  
+    src/gz packages https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/packages  
+    src/gz routing https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/routing  
+    src/gz telephony https://gitee.com/sakura_bot/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/telephony  
     ```
     2. 使用本仓库提供的sh脚本
     使用PuTTY或者其他SSH软件进入路由器，执行以下代码，按提示使用脚本
     ```
-    $ cd /tmp/
-    $ wget https://github.com/Gladtbam/OpenWRT_Action/raw/main/opkg.sh
-    $ wget https://gitee.com/sakura_bot/OpenWRT_Action/raw/main/opkg.sh
-     (以上wget命令二选一)
-    $ ./opkg.sh
-    $ opkg update
+    $ cd /tmp/  
+    $ wget https://github.com/Gladtbam/OpenWRT_Action/raw/main/opkg.sh  
+    $ wget https://gitee.com/sakura_bot/OpenWRT_Action/raw/main/opkg.sh  
+     (以上wget命令二选一)  
+    $ ./opkg.sh  
+    $ opkg update  
     ```
 - 注：由于未上传公钥，本仓库作为软件源进行`opkg update`时，无法通过签名校验，因此需要关闭校验。  
     方法1关闭签名校验，执行`sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf`  
