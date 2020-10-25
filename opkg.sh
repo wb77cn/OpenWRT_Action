@@ -24,7 +24,7 @@ Select(){
     echo -e "${Info} 请选择选择源"
     echo -e "${Info} 1. Gitee源"
     echo -e "${Info} 2. Github源"
-    read -e -p " 请输入数字:" num
+    read -p " 请输入数字:" num
     case "$num" in
     1)
         Load_Gitee
@@ -36,14 +36,15 @@ Select(){
 }
 main(){
     echo -e "本脚本会取消opkg校验签名文件，请再三确认后使用，如若造成损失，本人概不负责\n"
-    echo -e "是否使用本脚本[Y/N]"
-    read -e start_status_ny
-    [[ -z "${start_status_ny}" ]] && start_status_ny="y"
-    if [[ ${start_status_ny} == [Yy] ]];then
+    read -p "是否使用本脚本[Y/N]:" start_status_ny
+    case "$start_status_ny" in
+    [Yy])
         Fix_Signature_check
-    else
+        ;;
+    [Nn])
         exit
-    fi
+        ;;
+    esac
     Select
 }
 main
