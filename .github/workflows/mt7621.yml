@@ -107,6 +107,21 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
+    - name: Set signature
+      if: steps.compile.outputs.status == 'success' && ! cancelled ()
+      run: |
+        cd $GITHUB_WORKSPACE/
+        touch secret.key
+        echo "${{ secrets.KEY }}" >> secret.key
+        chmod 777 $GITHUB_WORKSPACE/usign
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/base/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/freifunk/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/luci/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/packages/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/routing/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/packages/*/telephony/Packages -s secret.key
+        ./usign -S -m $GITHUB_WORKSPACE/openwrt/bin/targets/*/*/packages/Packages -s secret.key
+
     - name: Upload firmware to GitHub
       if: env.UPLOAD_GITHUB == 'true' && steps.compile.outputs.status == 'success' && ! cancelled ()
       run: |
@@ -117,7 +132,6 @@ jobs:
         cd /opt/OpenWRT_Action
         git remote rm origin
         git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
-        git tag -d $REPO_BRANCH
         git checkout $REPO_BRANCH
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
@@ -131,7 +145,6 @@ jobs:
         cd /opt/OpenWRT_Action_fork
         git remote rm origin
         git remote add origin https://sakura_bot:${{ secrets.GITEE_TOKEN }}@gitee.com/sakura_bot/OpenWRT_Action.git
-        git tag -d $REPO_BRANCH
         git checkout $REPO_BRANCH
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action_fork/
         git add .
@@ -153,7 +166,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
         file: ${{ env.BIN }}/OpenWrt_bin_${{ env.DEVICE_NAME }}.zip
-        tag: custom
+        tag: mt7621_ci
         overwrite: true
         file_glob: true
         prerelease: true
@@ -173,7 +186,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN}}
         file: ${{ env.FIRMWARE }}/OpenWrt_firmware_${{ env.DEVICE_NAME }}.zip
-        tag: custom
+        tag: mt7621_ci
         overwrite: true
         file_glob: true
         prerelease: true

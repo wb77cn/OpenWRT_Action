@@ -32,15 +32,11 @@
     $ cd /tmp/  
     $ wget https://github.com/Gladtbam/OpenWRT_Action/raw/main/opkg.sh  
     $ wget https://gitee.com/sakura_bot/OpenWRT_Action/raw/main/opkg.sh  
-     (以上wget命令二选一)  
+     (以上wget命令二选一,脚本无法执行请输入chmod +x opkg.sh)  
     $ ./opkg.sh  
     $ opkg update  
     ```
-- 注：由于未上传公钥，本仓库作为软件源进行`opkg update`时，无法通过签名校验，因此需要关闭校验。  
-
-    关闭签名校验方法，执行`sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf`(方法2自动关闭校验)  
-
-    本人承诺未向源码添加任何危险代码，所有源码都是通过[Github Action](https://github.com/features/actions)从原存储库远程下载  
+- 注： 本人承诺未向源码添加任何危险代码，所有源码都是通过[Github Action](https://github.com/features/actions)从原存储库远程下载  
     如若由于关闭opkg签名校验和使用本仓库所造成的损失，本人概不负责  
 
 ### SSH使用说明

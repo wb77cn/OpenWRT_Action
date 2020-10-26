@@ -16,10 +16,6 @@ Load_Github(){
     echo "src/gz routing https://github.com/Gladtbam/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/routing" >> /etc/opkg/customfeeds.conf
     echo "src/gz telephony https://github.com/Gladtbam/OpenWRT_Action/raw/mt7621/packages/mipsel_24kc/telephony" >> /etc/opkg/customfeeds.conf
 }
-Fix_Signature_check(){
-    echo -e "${Info} 正在取消检测签名文件"
-    sed  -i 's/option check_signature/#option check_signature/g' /etc/opkg.conf
-}
 Select(){
     echo -e "${Info} 请选择选择源"
     echo -e "${Info} 1. Gitee源"
@@ -27,24 +23,28 @@ Select(){
     read -p " 请输入数字:" num
     case "$num" in
     1)
+        wget -P /tmp/ https://gitee.com/sakura_bot/OpenWRT_Action/raw/main/df94e071b643d7f7
+        opkg-key add df94e071b643d7f7
         Load_Gitee
         ;;
     2)
+        wget -P /tmp/ https://github.com/Gladtbam/OpenWRT_Action/raw/main/df94e071b643d7f7
+        opkg-key add df94e071b643d7f7
         Load_Github
         ;;
     esac
 }
 main(){
-    echo -e "本脚本会取消opkg校验签名文件，请再三确认后使用，如若造成损失，本人概不负责\n"
+    echo -e "本脚本会添加opkg校验签名文件，请再三确认后使用，如若造成损失，本人概不负责\n"
     read -p "是否使用本脚本[Y/N]:" start_status_ny
     case "$start_status_ny" in
     [Yy])
-        Fix_Signature_check
+        Select
         ;;
     [Nn])
         exit
         ;;
     esac
-    Select
+    exit
 }
 main
