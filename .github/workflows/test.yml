@@ -21,6 +21,9 @@ jobs:
 
     - name: Upload firmware to Gitee
       run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git config --global http.postBuffer 524288000
         echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action openwrt/
         cd $GITHUB_WORKSPACE/
