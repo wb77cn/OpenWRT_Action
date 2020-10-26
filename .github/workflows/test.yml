@@ -22,7 +22,7 @@ jobs:
     - name: Upload firmware to Gitee
       run: |
         echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
-        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action /openwrt
+        git clone -b $REPO_BRANCH https://github.com/Gladtbam/OpenWRT_Action openwrt/
         cd $GITHUB_WORKSPACE/
         touch secret.key
         echo "${{ secrets.KEY }}" >> secret.key
