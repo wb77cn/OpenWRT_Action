@@ -26,6 +26,7 @@ jobs:
         cd $GITHUB_WORKSPACE/
         touch secret.key
         echo "${{ secrets.KEY }}" >> secret.key
+        chmod 777 $GITHUB_WORKSPACE/usign
         ./usign -S -m $GITHUB_WORKSPACE/openwrt/packages/*/*/Packages -s secret.key
         ./usign -S -m $GITHUB_WORKSPACE/openwrt/targets/*/*/packages/Packages -s secret.key
         git clone -b $REPO_BRANCH https://gitee.com/sakura_bot/OpenWRT_Action.git /opt/OpenWRT_Action_fork
