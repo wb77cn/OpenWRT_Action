@@ -133,6 +133,10 @@ jobs:
         git remote rm origin
         git remote add origin https://Gladtbam:${{ secrets.GITHUB_TOKEN }}@github.com/Gladtbam/OpenWRT_Action.git
         git checkout $REPO_BRANCH
+        rm -rf /opt/OpenWRT_Action/packages && rm -rf /opt/OpenWRT_Action/targets
+        git add .
+        git commit -m "${{ env.FILE_DATE }}删除"
+        git push --set-upstream origin $REPO_BRANCH
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action/
         git add .
         git commit -m "${{ env.FILE_DATE }}提交"
@@ -146,9 +150,13 @@ jobs:
         git remote rm origin
         git remote add origin https://sakura_bot:${{ secrets.GITEE_TOKEN }}@gitee.com/sakura_bot/OpenWRT_Action.git
         git checkout $REPO_BRANCH
+        rm -rf /opt/OpenWRT_Action_fork/packages && rm -rf /opt/OpenWRT_Action_fork/targets
+        git add .
+        git commit -m "${{ env.FILE_DATE }}删除"
+        git push --set-upstream origin $REPO_BRANCH
         cp -rf $GITHUB_WORKSPACE/openwrt/bin/* /opt/OpenWRT_Action_fork/
         git add .
-        git commit -m "${{ env.FILE_DATA }}同步"
+        git commit -m "${{ env.FILE_DATE }}同步"
         git push --set-upstream origin $REPO_BRANCH
 
     - name: Zip files
