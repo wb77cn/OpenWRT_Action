@@ -1,0 +1,11 @@
+Package: luci-theme-freifunk-generic
+Version: git-20.249.85577-98e83ff-1
+Depends: libc
+Section: luci
+Architecture: all
+Installed-Size: 15313
+Filename: luci-theme-freifunk-generic_git-20.249.85577-98e83ff-1_all.ipk
+Size: 16081
+SHA256sum: 7b48672cb32d5602160ef77f95763c523d14c0891076bab8012c578bc7eab381
+Description:  Freifunk Generic Theme
+
