@@ -1,0 +1,1729 @@
+Package: freifunk-common
+Version: 3
+Depends: libc
+Source: feeds/luci/contrib/package/freifunk-common
+SourceName: freifunk-common
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 3421
+Filename: freifunk-common_3_mipsel_24kc.ipk
+Size: 4154
+SHA256sum: 55c09409b653ae6e7d228b7fbe5010a036855185c1372540a2a878221385712e
+Description:  Common files and scripts that are needed to run free wireless mesh networks.
+
+Package: freifunk-firewall
+Version: 3
+Depends: libc, firewall
+Source: feeds/luci/contrib/package/freifunk-firewall
+SourceName: freifunk-firewall
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 1147
+Filename: freifunk-firewall_3_mipsel_24kc.ipk
+Size: 2011
+SHA256sum: 5a0e201ac61d5f78300c693ed74f7e6e547ff57c712d16d58fb91965f815b658
+Description:  Various firewall extensions for Freifunk. Includes NAT fixes and advanced settings.
+
+Package: freifunk-policyrouting
+Version: 6
+Depends: libc, ip
+Source: feeds/luci/contrib/package/freifunk-policyrouting
+SourceName: freifunk-policyrouting
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 2290
+Filename: freifunk-policyrouting_6_mipsel_24kc.ipk
+Size: 3108
+SHA256sum: 6faa3043e044096b7d328da2ca2a8f47ffa7247dc3008e634873ab746f293688
+Description:  Allows you to send your own traffic via your own default gateway while sending traffic received from the mesh to a gateway in the mesh.
+
+Package: luci-app-adblock
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, adblock, luci-lib-jsonc
+Source: feeds/luci/applications/luci-app-adblock
+SourceName: luci-app-adblock
+Section: luci
+Architecture: all
+Installed-Size: 7097
+Filename: luci-app-adblock_git-20.343.54716-6fc079f-1_all.ipk
+Size: 7925
+SHA256sum: 322c26da8d82db71a255a0e36a6c293d1d80d7e4007f918162dd8fbc1006d116
+Description:  LuCI support for Adblock
+
+Package: luci-app-advanced-reboot
+Version: git-20.343.54716-6fc079f-42
+Depends: libc, luci-mod-admin-full
+Source: feeds/luci/applications/luci-app-advanced-reboot
+SourceName: luci-app-advanced-reboot
+License: GPL-3.0+
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 4160
+Filename: luci-app-advanced-reboot_git-20.343.54716-6fc079f-42_all.ipk
+Size: 5085
+SHA256sum: dfc1b3679095ddcc7d347d73ef76b2cd16757abbbb3927643ba98723c659bd7f
+Description:  Provides Web UI (found under System/Advanced Reboot) to reboot supported Linksys and ZyXEL routers to an alternative partition. Also provides Web UI to shut down (power off) your device. Supported dual-partition routers are listed at https://github.com/openwrt/luci/blob/master/applications/luci-app-advanced-reboot/README.md
+
+Package: luci-app-ahcp
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, ahcpd
+Source: feeds/luci/applications/luci-app-ahcp
+SourceName: luci-app-ahcp
+Section: luci
+Architecture: all
+Installed-Size: 2946
+Filename: luci-app-ahcp_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3741
+SHA256sum: 3cdb743843bb8fcb424af567ffa9e884306737b0a611b34bddf7a4a5e98357c9
+Description:  LuCI Support for AHCPd
+
+Package: luci-app-aria2
+Version: 1.0.1-3
+Depends: libc, aria2, ariang
+Source: feeds/luci/applications/luci-app-aria2
+SourceName: luci-app-aria2
+License: Apache-2.0
+Section: luci
+Maintainer: Hsing-Wang Liao <kuoruan@gmail.com>
+Architecture: all
+Installed-Size: 4315
+Filename: luci-app-aria2_1.0.1-3_all.ipk
+Size: 5117
+SHA256sum: 8f2280c66702ee2422cbb6ac5804335c5fcefef345373a2b35b0a30160902ebc
+Description:  LuCI Support for Aria2
+
+Package: luci-app-asterisk
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-asterisk
+SourceName: luci-app-asterisk
+Section: luci
+Architecture: all
+Installed-Size: 27586
+Filename: luci-app-asterisk_git-20.343.54716-6fc079f-1_all.ipk
+Size: 28360
+SHA256sum: 1e830c017b918083f8309d1842b8e177328498de44bee08bb383e396758ba0d3
+Description:  LuCI Support for Asterisk
+
+Package: luci-app-attendedsysupgrade
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base, uhttpd-mod-ubus, attendedsysupgrade-common, cgi-io
+Source: feeds/luci/applications/luci-app-attendedsysupgrade
+SourceName: luci-app-attendedsysupgrade
+Section: luci
+Architecture: all
+Installed-Size: 5880
+Filename: luci-app-attendedsysupgrade_git-20.343.54716-6fc079f-1_all.ipk
+Size: 6665
+SHA256sum: e6a381c9549ed5548c560a0cba23d888a910de617bd9f6cad3ba1c17c135c9e8
+Description:  LuCI support for attended sysupgrades
+
+Package: luci-app-bcp38
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, bcp38
+Source: feeds/luci/applications/luci-app-bcp38
+SourceName: luci-app-bcp38
+License: Apache-2.0
+Section: luci
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Architecture: all
+Installed-Size: 1592
+Filename: luci-app-bcp38_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2422
+SHA256sum: e46f568ee4d9d0b5e9aaca2b07c06d2712c94f2c79d6c2e7ac5893270ee45852
+Description:  BCP38 LuCI interface
+
+Package: luci-app-clamav
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, clamav
+Source: feeds/luci/applications/luci-app-clamav
+SourceName: luci-app-clamav
+License: Apache-2.0
+Section: luci
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
+Architecture: all
+Installed-Size: 2087
+Filename: luci-app-clamav_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2857
+SHA256sum: b85f66400fc425af8d982e577344171d6d478607211708d50d9ccbfae1722690
+Description:  ClamAV LuCI interface
+
+Package: luci-app-commands
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-commands
+SourceName: luci-app-commands
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 4861
+Filename: luci-app-commands_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5555
+SHA256sum: 67ea680b90bb5398260e9905be650f78c0c79d2f94c7c296f85408f640f9c2fc
+Description:  LuCI Shell Command Module
+
+Package: luci-app-cshark
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, cshark
+Source: feeds/luci/applications/luci-app-cshark
+SourceName: luci-app-cshark
+Section: luci
+Maintainer: Luka Perkov <luka@openwrt.org>
+Architecture: all
+Installed-Size: 3821
+Filename: luci-app-cshark_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4573
+SHA256sum: 698f9baa91da9ee5a5ea5c4e2ed78ae1dea5245572f6f2c56639c3804fce1cfe
+Description:  Cloudshark capture tool Web UI
+
+Package: luci-app-ddns
+Version: 2.4.9-8
+Depends: libc, luci-mod-admin-full, ddns-scripts
+Source: feeds/luci/applications/luci-app-ddns
+SourceName: luci-app-ddns
+License: Apache-2.0
+Section: luci
+Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
+Architecture: all
+Installed-Size: 26340
+Filename: luci-app-ddns_2.4.9-8_all.ipk
+Size: 27150
+SHA256sum: 25fb9f44cc7b6c9e46a206d4ce74293cd74b9888afa2a1c769938d6e95fc9588
+Description:  LuCI Support for Dynamic DNS Client (ddns-scripts)
+
+Package: luci-app-diag-core
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-diag-core
+SourceName: luci-app-diag-core
+Section: luci
+Architecture: all
+Installed-Size: 776
+Filename: luci-app-diag-core_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1488
+SHA256sum: b796dd6c5c0ed689a611fb1277dcc8d5f75e7f50ef083fe5af9d0fac81ca9527
+Description:  LuCI Diagnostics Tools (Core)
+
+Package: luci-app-dnscrypt-proxy
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, uclient-fetch, dnscrypt-proxy, luci-lib-httpprotoutils
+Source: feeds/luci/applications/luci-app-dnscrypt-proxy
+SourceName: luci-app-dnscrypt-proxy
+Section: luci
+Architecture: all
+Installed-Size: 5315
+Filename: luci-app-dnscrypt-proxy_git-20.343.54716-6fc079f-1_all.ipk
+Size: 6104
+SHA256sum: ccafc92f72d029f206ad8339a85233bce938b41d7957b1aaa1ffc12e63971ea1
+Description:  LuCI support for DNSCrypt-Proxy
+
+Package: luci-app-dump1090
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, dump1090
+Source: feeds/luci/applications/luci-app-dump1090
+SourceName: luci-app-dump1090
+Section: luci
+Architecture: all
+Installed-Size: 2675
+Filename: luci-app-dump1090_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3459
+SHA256sum: af3ff80a236806d26c4e770bad56a7b4114d598d8f7480c53f5633531d2adcc2
+Description:  LuCI Support for dump1090
+
+Package: luci-app-dynapoint
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, dynapoint
+Source: feeds/luci/applications/luci-app-dynapoint
+SourceName: luci-app-dynapoint
+License: GPL-3.0+
+Section: luci
+Maintainer: Tobias Ilte <tobias.ilte@campus.tu-berlin.de>
+Architecture: all
+Installed-Size: 2291
+Filename: luci-app-dynapoint_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3135
+SHA256sum: 2c77fbc5d6cf726703e24df4eac12318675501636959cb70eb174c83ce0e82c8
+Description:  LuCI Support for DynaPoint
+
+Package: luci-app-e2guardian
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, e2guardian
+Source: feeds/luci/applications/luci-app-e2guardian
+SourceName: luci-app-e2guardian
+License: Apache-2.0
+Section: luci
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
+Architecture: all
+Installed-Size: 4417
+Filename: luci-app-e2guardian_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5170
+SHA256sum: 49a3303e79d5fa93ccaceffd39eae66f38021dcca7fef398f3582ed41b2ddaa2
+Description:  E2Guardian LuCI Interface
+
+Package: luci-app-firewall
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, firewall
+Source: feeds/luci/applications/luci-app-firewall
+SourceName: luci-app-firewall
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 10817
+Filename: luci-app-firewall_git-20.343.54716-6fc079f-1_all.ipk
+Size: 11558
+SHA256sum: 0c235683865b31f2abaafe983d2fc7ca1938762a7675df6ae22d7338c5b6d684
+Description:  Firewall and Portforwarding application
+
+Package: luci-app-freifunk-diagnostics
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-freifunk-diagnostics
+SourceName: luci-app-freifunk-diagnostics
+Section: luci
+Architecture: all
+Installed-Size: 2276
+Filename: luci-app-freifunk-diagnostics_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3080
+SHA256sum: 89ddee38253f18e03e00c25e824781ea55dbc09963ee129d8cf2ea5eebd98111
+Description:  Tools for network diagnosis like traceroute and ping
+
+Package: luci-app-freifunk-policyrouting
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, freifunk-policyrouting
+Source: feeds/luci/applications/luci-app-freifunk-policyrouting
+SourceName: luci-app-freifunk-policyrouting
+Section: luci
+Architecture: all
+Installed-Size: 1189
+Filename: luci-app-freifunk-policyrouting_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1927
+SHA256sum: 75f6bec738963ab3402a25834e91df690b8c7ba65d91fbb9862e84ae81a105d6
+Description:  Policy routing for mesh traffic
+
+Package: luci-app-freifunk-widgets
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-freifunk
+Source: feeds/luci/applications/luci-app-freifunk-widgets
+SourceName: luci-app-freifunk-widgets
+Section: luci
+Architecture: all
+Installed-Size: 4458
+Filename: luci-app-freifunk-widgets_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5176
+SHA256sum: b75b0e99238089530cbe943eee31cc2cf2dd0067c8fabfc05f474b0d200efd2a
+Description:  Widgets for the Freifunk index page
+
+Package: luci-app-fwknopd
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, fwknopd, qrencode
+Source: feeds/luci/applications/luci-app-fwknopd
+SourceName: luci-app-fwknopd
+License: GPLv2
+Section: luci
+Maintainer: Jonathan Bennett <JBennett@incomsystems.biz>
+Architecture: all
+Installed-Size: 2555
+Filename: luci-app-fwknopd_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3418
+SHA256sum: 55c86ad5e0a0c28ec39829e6e3924715edd20809b0fbdfa8530d5c3a940244d1
+Description:  Fwknopd config - web config for the firewall knock daemon
+
+Package: luci-app-hd-idle
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, hd-idle
+Source: feeds/luci/applications/luci-app-hd-idle
+SourceName: luci-app-hd-idle
+Section: luci
+Architecture: all
+Installed-Size: 1048
+Filename: luci-app-hd-idle_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1852
+SHA256sum: 194f3dc552ac9de9450668a79e012a304c190273bf726457ab73fd35b1775222
+Description:  Hard Disk Idle Spin-Down module
+
+Package: luci-app-https-dns-proxy
+Version: git-20.343.54716-6fc079f-12
+Depends: libc, luci-compat, luci-mod-admin-full, https-dns-proxy
+Source: feeds/luci/applications/luci-app-https-dns-proxy
+SourceName: luci-app-https-dns-proxy
+License: GPL-3.0-or-later
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 6478
+Filename: luci-app-https-dns-proxy_git-20.343.54716-6fc079f-12_all.ipk
+Size: 7375
+SHA256sum: fd63362980df1b01b0c9424547fcbe8def18c08734aad91ad410777096045a8a
+Description:  Provides Web UI for DNS Over HTTPS Proxy
+
+Package: luci-app-lxc
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, lxc, lxc-attach, lxc-console, lxc-create, liblxc, rpcd-mod-lxc, getopt
+Source: feeds/luci/applications/luci-app-lxc
+SourceName: luci-app-lxc
+Section: luci
+Maintainer: Petar Koretic <petar.koretic@sartura.hr>
+Architecture: all
+Installed-Size: 6464
+Filename: luci-app-lxc_git-20.343.54716-6fc079f-1_all.ipk
+Size: 7261
+SHA256sum: edf3dc070522aa50394fdc42d257417cf3ded9f226d08ac332f7d484587b886d
+Description:  LXC management Web UI
+
+Package: luci-app-meshwizard
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, meshwizard
+Source: feeds/luci/applications/luci-app-meshwizard
+SourceName: luci-app-meshwizard
+Section: luci
+Architecture: all
+Installed-Size: 2789
+Filename: luci-app-meshwizard_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3592
+SHA256sum: 7372aebf4808a3325c4ec513b801356b3d5dd378de607e82c5765806a5b6beae
+Description:  Shellscript based wizard to setup mesh networks
+
+Package: luci-app-minidlna
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, minidlna
+Source: feeds/luci/applications/luci-app-minidlna
+SourceName: luci-app-minidlna
+Section: luci
+Architecture: all
+Installed-Size: 3218
+Filename: luci-app-minidlna_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4012
+SHA256sum: 2d1c4516a007574bf0452b1b8ddf2a7db06c1314ce36433569ddca9e07943cb4
+Description:  LuCI Support for miniDLNA
+
+Package: luci-app-mjpg-streamer
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, mjpg-streamer
+Source: feeds/luci/applications/luci-app-mjpg-streamer
+SourceName: luci-app-mjpg-streamer
+Section: luci
+Architecture: all
+Installed-Size: 3028
+Filename: luci-app-mjpg-streamer_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3826
+SHA256sum: 1e6bf0523957c2e5760fe55e4573eb8ee66d5c3b39c65ebf72330237dcc693b3
+Description:  MJPG-Streamer service configuration module
+
+Package: luci-app-mwan3
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, mwan3, libuci-lua, luci-mod-admin-full, luci-app-firewall, luci-lib-nixio
+Source: feeds/luci/applications/luci-app-mwan3
+SourceName: luci-app-mwan3
+License: GPLv2
+Section: luci
+Maintainer: Aedan Renner <chipdankly@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Architecture: all
+Installed-Size: 11147
+Filename: luci-app-mwan3_git-20.343.54716-6fc079f-1_all.ipk
+Size: 12055
+SHA256sum: 0c21c1f03887ed094cc70ea3082f564d18970515b914526c55e1f7e0fb14a171
+Description:  LuCI support for the MWAN3 multiwan hotplug script
+
+Package: luci-app-nlbwmon
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, nlbwmon
+Source: feeds/luci/applications/luci-app-nlbwmon
+SourceName: luci-app-nlbwmon
+Section: luci
+Architecture: all
+Installed-Size: 21671
+Filename: luci-app-nlbwmon_git-20.343.54716-6fc079f-1_all.ipk
+Size: 22472
+SHA256sum: 21795828b4445166149d526fcfa807b47c46d64fa1d4948767d25a38f3bc4e35
+Description:  Netlink based bandwidth accounting
+
+Package: luci-app-noddos
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci, noddos
+Source: feeds/luci/applications/luci-app-noddos
+SourceName: luci-app-noddos
+License: GPLv3
+Section: luci
+Maintainer: Steven Hessing <steven.hessing@gmail.com>
+Architecture: all
+Installed-Size: 3236
+Filename: luci-app-noddos_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4058
+SHA256sum: a60030543db5a11120543575ac1a1985e153173fbab8f8b6db4b0039d7aaed5a
+Description:  Provides Web UI for Noddos service.
+
+Package: luci-app-ntpc
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, ntpclient
+Source: feeds/luci/applications/luci-app-ntpc
+SourceName: luci-app-ntpc
+Section: luci
+Architecture: all
+Installed-Size: 1104
+Filename: luci-app-ntpc_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1816
+SHA256sum: bf5f06f76adc5f25a5837ce82d6d4b53debcb220f0f79e1d2266e5ea9a7e6cde
+Description:  NTP time synchronisation configuration module
+
+Package: luci-app-ocserv
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, ocserv, certtool
+Source: feeds/luci/applications/luci-app-ocserv
+SourceName: luci-app-ocserv
+Section: luci
+Architecture: all
+Installed-Size: 4764
+Filename: luci-app-ocserv_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5507
+SHA256sum: 1e10cc87f1e72bfeab0d6927403bd3ae2597934a1bdc31c4c46c048d6f07062f
+Description:  LuCI Support for OpenConnect VPN
+
+Package: luci-app-olsr-services
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-olsr, olsrd, olsrd-mod-nameservice
+Source: feeds/luci/applications/luci-app-olsr-services
+SourceName: luci-app-olsr-services
+Section: luci
+Architecture: all
+Installed-Size: 2168
+Filename: luci-app-olsr-services_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2890
+SHA256sum: 7cc5c1e2a5b2a1e637a7ab85e624cc275643bc0a644c83f04bebb9be5a72f772
+Description:  Show services announced with the nameservice plugin
+
+Package: luci-app-olsr-viz
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-olsr, olsrd, olsrd-mod-txtinfo
+Source: feeds/luci/applications/luci-app-olsr-viz
+SourceName: luci-app-olsr-viz
+Section: luci
+Architecture: all
+Installed-Size: 11451
+Filename: luci-app-olsr-viz_git-20.343.54716-6fc079f-1_all.ipk
+Size: 12170
+SHA256sum: a18ac0ceb414628326ec6b2fc8a9082d1033baba84452f5512aced4ea2624d23
+Description:  OLSR Visualisation
+
+Package: luci-app-olsr
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, olsrd, olsrd-mod-jsoninfo, luci-lib-luaneightbl, luci-lib-json
+Source: feeds/luci/applications/luci-app-olsr
+SourceName: luci-app-olsr
+Section: luci
+Architecture: all
+Installed-Size: 18432
+Filename: luci-app-olsr_git-20.343.54716-6fc079f-1_all.ipk
+Size: 19180
+SHA256sum: f87868e147955c704951dc1aa2f1c7213288bca2cd8c6b652d310779558bb191
+Description:  OLSR configuration and status module
+
+Package: luci-app-openvpn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-openvpn
+SourceName: luci-app-openvpn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 8666
+Filename: luci-app-openvpn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 9408
+SHA256sum: 7899625eca72174798f9d17d59b1c8e196b54caa3a7e310c73d16a57af6d7f77
+Description:  LuCI Support for OpenVPN
+
+Package: luci-app-p910nd
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, p910nd
+Source: feeds/luci/applications/luci-app-p910nd
+SourceName: luci-app-p910nd
+Section: luci
+Architecture: all
+Installed-Size: 1259
+Filename: luci-app-p910nd_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2062
+SHA256sum: 5c248d3e67deb3b49a95b3ccf7af9564c98b64728123b4fbc3641746d5b9e47d
+Description:  p910nd - Printer server module
+
+Package: luci-app-pagekitec
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, pagekitec
+Source: feeds/luci/applications/luci-app-pagekitec
+SourceName: luci-app-pagekitec
+Section: luci
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Architecture: all
+Installed-Size: 1128
+Filename: luci-app-pagekitec_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1966
+SHA256sum: be9ff421a011980399a0bbdd0019381087ed54cc06c68864e7e8c1667fc38a5f
+Description:  LuCI Support for PageKite
+
+Package: luci-app-polipo
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, polipo
+Source: feeds/luci/applications/luci-app-polipo
+SourceName: luci-app-polipo
+Section: luci
+Architecture: all
+Installed-Size: 3061
+Filename: luci-app-polipo_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3856
+SHA256sum: 2b4b0c5093acaf210530a073dd3840a41df1947de6b46ffc72ad4b3c37b8ef52
+Description:  LuCI Support for the Polipo Proxy
+
+Package: luci-app-privoxy
+Version: 1.0.6-2
+Depends: libc, luci-mod-admin-full, privoxy
+Source: feeds/luci/applications/luci-app-privoxy
+SourceName: luci-app-privoxy
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 12197
+Filename: luci-app-privoxy_1.0.6-2_all.ipk
+Size: 13015
+SHA256sum: 3dcb0c9594a9813e91ac38ee0587298c34525d4a10c9f22c432ada3be2f7d8bb
+Description:  LuCI Support for Privoxy WEB proxy
+
+Package: luci-app-qos
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, qos-scripts
+Source: feeds/luci/applications/luci-app-qos
+SourceName: luci-app-qos
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 1367
+Filename: luci-app-qos_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2111
+SHA256sum: 7b7a956039018e485a3153bb8dd7de7a831515764f12aaaeaec56097dcd59fca
+Description:  Quality of Service configuration module
+
+Package: luci-app-radicale
+Version: 1.1.0-1
+Depends: libc, luci-mod-admin-full
+Source: feeds/luci/applications/luci-app-radicale
+SourceName: luci-app-radicale
+License: Apache-2.0
+Section: luci
+Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Architecture: all
+Installed-Size: 10026
+Filename: luci-app-radicale_1.1.0-1_all.ipk
+Size: 10906
+SHA256sum: f9d78c92d24bb8850f2b38230b9cb9e8e9b412d4c65f0e54248b2bafa3b3c5fb
+Description:  LuCI Support for Radicale CardDAV/CalDAV
+
+Package: luci-app-rp-pppoe-server
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, rp-pppoe-server
+Source: feeds/luci/applications/luci-app-rp-pppoe-server
+SourceName: luci-app-rp-pppoe-server
+Section: luci
+Architecture: all
+Installed-Size: 1087
+Filename: luci-app-rp-pppoe-server_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1817
+SHA256sum: ee5f800bc1ca31963c2182a59d6529ff0b5fe152422d6479652b48182908b606
+Description:  Roaring Penguing PPPoE Server
+
+Package: luci-app-samba
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, samba36-server
+Source: feeds/luci/applications/luci-app-samba
+SourceName: luci-app-samba
+Section: luci
+Architecture: all
+Installed-Size: 1498
+Filename: luci-app-samba_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2239
+SHA256sum: 61f17bf35e3dd766719d78e3899ca95086ea4e40951c544edcc1d423e90476b1
+Description:  Network Shares - Samba SMB/CIFS module
+
+Package: luci-app-shadowsocks-libev
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/applications/luci-app-shadowsocks-libev
+SourceName: luci-app-shadowsocks-libev
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 5963
+Filename: luci-app-shadowsocks-libev_git-20.343.54716-6fc079f-1_all.ipk
+Size: 6726
+SHA256sum: 54e6312a84476f94d1cb3dc116ccea8c35f13ca317fc757a3ac83bf4d35c338c
+Description:  LuCI Support for shadowsocks-libev
+
+Package: luci-app-shairplay
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, shairplay
+Source: feeds/luci/applications/luci-app-shairplay
+SourceName: luci-app-shairplay
+Section: luci
+Architecture: all
+Installed-Size: 1381
+Filename: luci-app-shairplay_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2153
+SHA256sum: ae3627af4803516c2eccc8b4a85cc111a1d55ecc4f5b2133dedc8692c0540d01
+Description:  LuCI Support for Shairplay
+
+Package: luci-app-siitwizard
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, kmod-siit
+Source: feeds/luci/applications/luci-app-siitwizard
+SourceName: luci-app-siitwizard
+Section: luci
+Architecture: all
+Installed-Size: 3751
+Filename: luci-app-siitwizard_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4474
+SHA256sum: 12df34cd975853c625e09af31801c6d19bdc583bf37445ca6034136e141d6b82
+Description:  SIIT IPv4-over-IPv6 configuration wizard
+
+Package: luci-app-simple-adblock
+Version: git-20.343.54716-6fc079f-5
+Depends: libc, luci, simple-adblock
+Source: feeds/luci/applications/luci-app-simple-adblock
+SourceName: luci-app-simple-adblock
+License: GPL-3.0+
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 1499
+Filename: luci-app-simple-adblock_git-20.343.54716-6fc079f-5_all.ipk
+Size: 2333
+SHA256sum: a1d4f3fdff813a67fae0fe370e9b3d37a655f4fd78829c3bc14bebb0ee552584
+Description:  Provides Web UI for simple-adblock service.
+
+Package: luci-app-splash
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-lib-nixio, tc, kmod-sched, iptables-mod-nat-extra, iptables-mod-ipopt
+Source: feeds/luci/applications/luci-app-splash
+SourceName: luci-app-splash
+Section: luci
+Architecture: all
+Installed-Size: 16786
+Filename: luci-app-splash_git-20.343.54716-6fc079f-1_all.ipk
+Size: 17605
+SHA256sum: b852aa39393573c97151aae81b1c0a7ff5423255a6f5aa6bdb05932939873fdb
+Description:  Freifunk DHCP-Splash application
+
+Package: luci-app-sqm
+Version: 1.4.0-9
+Depends: libc, sqm-scripts
+Source: feeds/luci/applications/luci-app-sqm
+SourceName: luci-app-sqm
+Section: luci
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Architecture: all
+Installed-Size: 4211
+Filename: luci-app-sqm_1.4.0-9_all.ipk
+Size: 5022
+SHA256sum: e85656ee1ef673a3f95a80ae90e7060bcf17d473f4d462446e506a9405e48ba6
+Description:  Luci interface for the SQM scripts queue management package
+
+Package: luci-app-squid
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, squid
+Source: feeds/luci/applications/luci-app-squid
+SourceName: luci-app-squid
+License: Apache-2.0
+Section: luci
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
+Architecture: all
+Installed-Size: 1157
+Filename: luci-app-squid_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1942
+SHA256sum: 0e9bc0ab04675009951a4bd530ce0d1fabfbb923ff2e9ef87671d48762df816a
+Description:  Squid LuCI Interface
+
+Package: luci-app-statistics
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, collectd, rrdtool1, collectd-mod-rrdtool, collectd-mod-iwinfo, collectd-mod-cpu, collectd-mod-memory, collectd-mod-interface, collectd-mod-load, collectd-mod-network
+Source: feeds/luci/applications/luci-app-statistics
+SourceName: luci-app-statistics
+Section: luci
+Architecture: all
+Installed-Size: 29781
+Filename: luci-app-statistics_git-20.343.54716-6fc079f-1_all.ipk
+Size: 30669
+SHA256sum: a6e76660e12864ec15c06faa74247e1461ffff78ce8839a68fd9209e94e80da0
+Description:  LuCI Statistics Application
+
+Package: luci-app-tinyproxy
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, tinyproxy
+Source: feeds/luci/applications/luci-app-tinyproxy
+SourceName: luci-app-tinyproxy
+Section: luci
+Architecture: all
+Installed-Size: 3186
+Filename: luci-app-tinyproxy_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3915
+SHA256sum: c76ed2453cb081d5d6d8cae3cd626d8fef8f2a758a615bea396c208ba131f333
+Description:  Tinyproxy - HTTP(S)-Proxy configuration
+
+Package: luci-app-transmission
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, transmission-daemon-openssl, transmission-web-control
+Source: feeds/luci/applications/luci-app-transmission
+SourceName: luci-app-transmission
+Section: luci
+Architecture: all
+Installed-Size: 3450
+Filename: luci-app-transmission_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4233
+SHA256sum: fcf239fdc90e8be9d434841ac80901eebc2bacac6d77d2728f106f734fc29b87
+Description:  LuCI Support for Transmission
+
+Package: luci-app-travelmate
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, travelmate, luci-lib-jsonc
+Source: feeds/luci/applications/luci-app-travelmate
+SourceName: luci-app-travelmate
+Section: luci
+Architecture: all
+Installed-Size: 8877
+Filename: luci-app-travelmate_git-20.343.54716-6fc079f-1_all.ipk
+Size: 9712
+SHA256sum: 59478c944bd3997914e2783b8ae7dc1e7175a282aaf1db6bb680b5a561e857ca
+Description:  LuCI support for Travelmate
+
+Package: luci-app-udpxy
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, udpxy
+Source: feeds/luci/applications/luci-app-udpxy
+SourceName: luci-app-udpxy
+Section: luci
+Architecture: all
+Installed-Size: 1413
+Filename: luci-app-udpxy_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2170
+SHA256sum: 24ec416c59cbbf797b0351d1c47eea34c14a0457e6f952aac7b5ceb4d0788db2
+Description:  LuCI Support for udpxy
+
+Package: luci-app-uhttpd
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, uhttpd
+Source: feeds/luci/applications/luci-app-uhttpd
+SourceName: luci-app-uhttpd
+License: Apache-2.0
+Section: luci
+Maintainer: Daniel Dickinson <openwrt@daniel.thecshore.com>
+Architecture: all
+Installed-Size: 2866
+Filename: luci-app-uhttpd_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3648
+SHA256sum: d86e7edc1703205ee28bfcbfa1a6a79bc06540209cbc64d9ba33e222a8717a21
+Description:  uHTTPd Webserver Configuration
+
+Package: luci-app-unbound
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, unbound-daemon
+Source: feeds/luci/applications/luci-app-unbound
+SourceName: luci-app-unbound
+Section: luci
+Architecture: all
+Installed-Size: 6109
+Filename: luci-app-unbound_git-20.343.54716-6fc079f-1_all.ipk
+Size: 6911
+SHA256sum: e186274443f8a3069aa5b3d2fd8cd97a2aa9c9c03711c56cb67cb2c1478ecce1
+Description:  Unbound Recursive DNS Resolver Configuration
+
+Package: luci-app-upnp
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, miniupnpd
+Source: feeds/luci/applications/luci-app-upnp
+SourceName: luci-app-upnp
+Section: luci
+Architecture: all
+Installed-Size: 3601
+Filename: luci-app-upnp_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4379
+SHA256sum: ef8688a76cca235dcf1134f48f7d470777bcc6cbd68e7c59bea646ba5485c50b
+Description:  Universal Plug & Play configuration module
+
+Package: luci-app-vnstat
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, vnstat, vnstati
+Source: feeds/luci/applications/luci-app-vnstat
+SourceName: luci-app-vnstat
+Section: luci
+Architecture: all
+Installed-Size: 2240
+Filename: luci-app-vnstat_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3028
+SHA256sum: b7259a6d19bff8299cde4f69ff898ee4f619a96fa321a35405f9c2242d12cc27
+Description:  LuCI Support for VnStat
+
+Package: luci-app-vpnbypass
+Version: git-20.343.54716-6fc079f-4
+Depends: libc, luci, vpnbypass
+Source: feeds/luci/applications/luci-app-vpnbypass
+SourceName: luci-app-vpnbypass
+License: GPL-3.0+
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 1365
+Filename: luci-app-vpnbypass_git-20.343.54716-6fc079f-4_all.ipk
+Size: 2204
+SHA256sum: 60f44822a80fb355f084d650ecda378339950ff138f893ebd21f30c41d981c26
+Description:  Provides Web UI for VPNBypass service.
+
+Package: luci-app-watchcat
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, watchcat
+Source: feeds/luci/applications/luci-app-watchcat
+SourceName: luci-app-watchcat
+Section: luci
+Architecture: all
+Installed-Size: 1414
+Filename: luci-app-watchcat_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2178
+SHA256sum: fbb2c7c2bcf7e0545d8abf3b7797eb0ed8198e2187730b94392277be3f9b492a
+Description:  LuCI Support for Watchcat
+
+Package: luci-app-wifischedule
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, wifischedule, iwinfo
+Source: feeds/luci/applications/luci-app-wifischedule
+SourceName: luci-app-wifischedule
+Section: luci
+Architecture: all
+Installed-Size: 3136
+Filename: luci-app-wifischedule_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3871
+SHA256sum: ffa377ff16e3187cfd511a27558aa7ba499252bcc9aefae2177f2f41a3387284
+Description:  Turns WiFi on and off according to a schedule
+
+Package: luci-app-wireguard
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, wireguard-tools, kmod-wireguard, luci-proto-wireguard
+Source: feeds/luci/applications/luci-app-wireguard
+SourceName: luci-app-wireguard
+Section: luci
+Maintainer: Dan Luedtke <mail@danrl.com>
+Architecture: all
+Installed-Size: 2421
+Filename: luci-app-wireguard_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3173
+SHA256sum: 27065bfdc7b62f86d9aac7a67196fea7720eb2eef8993aa2599148dc1dfe2583
+Description:  WireGuard Status
+
+Package: luci-app-wol
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, etherwake, wol
+Source: feeds/luci/applications/luci-app-wol
+SourceName: luci-app-wol
+Section: luci
+Architecture: all
+Installed-Size: 1455
+Filename: luci-app-wol_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2188
+SHA256sum: 95695050f7f2487d5b7057e00ad33a7eab94aa0e2779fd9c5e3907e4ebc4c917
+Description:  LuCI Support for Wake-on-LAN
+
+Package: luci-base
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, lua, libuci-lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua, luci-lib-jsonc
+Source: feeds/luci/modules/luci-base
+SourceName: luci-base
+License: Apache-2.0
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 123361
+Filename: luci-base_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 124346
+SHA256sum: b9dd60f85eeddb19935c409d0cbebaca7c1c71adb70dee271773e613f4f23d5c
+Description:  LuCI core libraries
+
+Package: luci-compat
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base
+Source: feeds/luci/modules/luci-compat
+SourceName: luci-compat
+Section: luci
+Architecture: all
+Installed-Size: 105
+Filename: luci-compat_git-20.343.54716-6fc079f-1_all.ipk
+Size: 785
+SHA256sum: 7993745cedf81d88bba23c689cb8298e7ee9b84a2d2e2bc2d82c566547a6ca51
+Description:  LuCI compatibility libraries
+
+Package: luci-i18n-adblock-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-adblock
+Source: feeds/luci/applications/luci-app-adblock
+SourceName: luci-i18n-adblock-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 2615
+Filename: luci-i18n-adblock-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3461
+SHA256sum: 23441dc642134d4e2730ab655049ae8272696f20b5e5b252619ac75482e08e9b
+Description:  Translation for luci-app-adblock - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-advanced-reboot-zh-cn
+Version: git-20.343.54716-6fc079f-42
+Depends: libc, luci-app-advanced-reboot
+Source: feeds/luci/applications/luci-app-advanced-reboot
+SourceName: luci-i18n-advanced-reboot-zh-cn
+License: GPL-3.0+
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 1684
+Filename: luci-i18n-advanced-reboot-zh-cn_git-20.343.54716-6fc079f-42_all.ipk
+Size: 2584
+SHA256sum: 960dba2c8c6ca0df47edc9d632da64a20aec243576ac5f363b9a25df79022f1e
+Description:  Translation for luci-app-advanced-reboot - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-ahcp-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-ahcp
+Source: feeds/luci/applications/luci-app-ahcp
+SourceName: luci-i18n-ahcp-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1325
+Filename: luci-i18n-ahcp-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2160
+SHA256sum: d56903e3b387f18b32148f9e02a5fc031c47a10171762d8956164c006b7709f7
+Description:  Translation for luci-app-ahcp - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-aria2-zh-cn
+Version: 1.0.1-3
+Depends: libc, luci-app-aria2
+Source: feeds/luci/applications/luci-app-aria2
+SourceName: luci-i18n-aria2-zh-cn
+License: Apache-2.0
+Section: luci
+Maintainer: Hsing-Wang Liao <kuoruan@gmail.com>
+Architecture: all
+Installed-Size: 2153
+Filename: luci-i18n-aria2-zh-cn_1.0.1-3_all.ipk
+Size: 3033
+SHA256sum: 662cefd3a84105ec6fc31e1f1d116f63320f30b2fe5bd9e75b0d0f847d596e4f
+Description:  Translation for luci-app-aria2 - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-asterisk-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-asterisk
+Source: feeds/luci/applications/luci-app-asterisk
+SourceName: luci-i18n-asterisk-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 355
+Filename: luci-i18n-asterisk-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1186
+SHA256sum: 37e68d9107e96d935b5b4378bc4cf2c47eff70c13f5c465d001e2bdac0d9c877
+Description:  Translation for luci-app-asterisk - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-base-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base
+Source: feeds/luci/modules/luci-base
+SourceName: luci-i18n-base-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 29391
+Filename: luci-i18n-base-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 30260
+SHA256sum: c6d45c845918626ab45c0e5c267427fddee1db7f9fba6496c9f02c1d1d3705dd
+Description:  Translation for luci-base - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-bcp38-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-bcp38
+Source: feeds/luci/applications/luci-app-bcp38
+SourceName: luci-i18n-bcp38-zh-cn
+License: Apache-2.0
+Section: luci
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Architecture: all
+Installed-Size: 1083
+Filename: luci-i18n-bcp38-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1973
+SHA256sum: eda3185c0ecc9211896d0a224a4573351510068d0290d513c1415a829c9b5b60
+Description:  Translation for luci-app-bcp38 - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-clamav-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-clamav
+Source: feeds/luci/applications/luci-app-clamav
+SourceName: luci-i18n-clamav-zh-cn
+License: Apache-2.0
+Section: luci
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
+Architecture: all
+Installed-Size: 1192
+Filename: luci-i18n-clamav-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2078
+SHA256sum: 5078174e83f4092f458a1ac54c0f49b59c06215e5071e692ab1b2059643bdded
+Description:  Translation for luci-app-clamav - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-commands-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-commands
+Source: feeds/luci/applications/luci-app-commands
+SourceName: luci-i18n-commands-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 1263
+Filename: luci-i18n-commands-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2123
+SHA256sum: ea91609ba3085d580fd37e586a11e1820c259fb75d225132289a0bd9304b7f6d
+Description:  Translation for luci-app-commands - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-ddns-zh-cn
+Version: 2.4.9-8
+Depends: libc, luci-app-ddns
+Source: feeds/luci/applications/luci-app-ddns
+SourceName: luci-i18n-ddns-zh-cn
+License: Apache-2.0
+Section: luci
+Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
+Architecture: all
+Installed-Size: 6765
+Filename: luci-i18n-ddns-zh-cn_2.4.9-8_all.ipk
+Size: 7673
+SHA256sum: 1a2aea07ca80fdf1ad4b79d65086e159cd3ae073a775ba5cf032470b56a081ed
+Description:  Translation for luci-app-ddns - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-diag-core-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-diag-core
+Source: feeds/luci/applications/luci-app-diag-core
+SourceName: luci-i18n-diag-core-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 685
+Filename: luci-i18n-diag-core-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1515
+SHA256sum: 6738353f5bdf579e9bb999df6fdf0652e96fd1f9da09c903356406164b80264b
+Description:  Translation for luci-app-diag-core - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-firewall-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-firewall
+Source: feeds/luci/applications/luci-app-firewall
+SourceName: luci-i18n-firewall-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 4642
+Filename: luci-i18n-firewall-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5467
+SHA256sum: d5d96e3f1c37f371535197b4fae780fd2af3ae3ae234a725ca61fa1f7694972b
+Description:  Translation for luci-app-firewall - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-freifunk-policyrouting-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-freifunk-policyrouting
+Source: feeds/luci/applications/luci-app-freifunk-policyrouting
+SourceName: luci-i18n-freifunk-policyrouting-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1055
+Filename: luci-i18n-freifunk-policyrouting-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1902
+SHA256sum: c6ddfd78101db4adcdc645ce0d7fd98fc48ab5547adca7f6cc0e109cfd406255
+Description:  Translation for luci-app-freifunk-policyrouting - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-freifunk-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-freifunk
+Source: feeds/luci/modules/luci-mod-freifunk
+SourceName: luci-i18n-freifunk-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 3602
+Filename: luci-i18n-freifunk-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4401
+SHA256sum: b4677b0cd29b57721f3c721726463e6b161a0b317410d0b8b8f3b27f1c0ec926
+Description:  Translation for luci-mod-freifunk - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-hd-idle-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-hd-idle
+Source: feeds/luci/applications/luci-app-hd-idle
+SourceName: luci-i18n-hd-idle-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 650
+Filename: luci-i18n-hd-idle-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1476
+SHA256sum: c57bd3a9183db2305a645380a7974c6fd9ab4a64a9bf3e0c9f6b62e96d0c83dd
+Description:  Translation for luci-app-hd-idle - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-meshwizard-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-meshwizard
+Source: feeds/luci/applications/luci-app-meshwizard
+SourceName: luci-i18n-meshwizard-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1288
+Filename: luci-i18n-meshwizard-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2136
+SHA256sum: 1b8ae441d9f98263fa2c5d595aa5055637b3fc0ff1bbbff7373a32f7cd6a3d15
+Description:  Translation for luci-app-meshwizard - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-minidlna-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-minidlna
+Source: feeds/luci/applications/luci-app-minidlna
+SourceName: luci-i18n-minidlna-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1837
+Filename: luci-i18n-minidlna-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2684
+SHA256sum: abff19a9015093d23ab5f881aab064dbe615080abf4f00fcfa072fcb4c8ee6a6
+Description:  Translation for luci-app-minidlna - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-mjpg-streamer-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-mjpg-streamer
+Source: feeds/luci/applications/luci-app-mjpg-streamer
+SourceName: luci-i18n-mjpg-streamer-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1768
+Filename: luci-i18n-mjpg-streamer-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2613
+SHA256sum: 2f065cf7b3463d48b7d93dae0d3b84cc66dba4cc18b24546c6b21f39bf100d37
+Description:  Translation for luci-app-mjpg-streamer - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-mwan3-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-mwan3
+Source: feeds/luci/applications/luci-app-mwan3
+SourceName: luci-i18n-mwan3-zh-cn
+License: GPLv2
+Section: luci
+Maintainer: Aedan Renner <chipdankly@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Architecture: all
+Installed-Size: 3518
+Filename: luci-i18n-mwan3-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4393
+SHA256sum: feb84a47bb018c619a49d2ca81c32aaf423e45bea7814ee515ed49bef4c32178
+Description:  Translation for luci-app-mwan3 - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-nlbwmon-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-nlbwmon
+Source: feeds/luci/applications/luci-app-nlbwmon
+SourceName: luci-i18n-nlbwmon-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 3780
+Filename: luci-i18n-nlbwmon-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 4590
+SHA256sum: bd4c1a046c3d8f7a52386598bc5b0bcf4a0f989443dca8f8014edec4b143a414
+Description:  Translation for luci-app-nlbwmon - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-ntpc-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-ntpc
+Source: feeds/luci/applications/luci-app-ntpc
+SourceName: luci-i18n-ntpc-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 739
+Filename: luci-i18n-ntpc-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1567
+SHA256sum: 1448c1ff10076ec81d5aa4de51c4b52887807be7126dc8d91f85e959761d7ece
+Description:  Translation for luci-app-ntpc - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-olsr-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-olsr
+Source: feeds/luci/applications/luci-app-olsr
+SourceName: luci-i18n-olsr-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1201
+Filename: luci-i18n-olsr-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2030
+SHA256sum: c7d1c0f5ba074b1a3c770440911ff1ef244df224ce41106c95a01c242f7af8d5
+Description:  Translation for luci-app-olsr - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-openvpn-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-openvpn
+Source: feeds/luci/applications/luci-app-openvpn
+SourceName: luci-i18n-openvpn-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 5591
+Filename: luci-i18n-openvpn-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 6418
+SHA256sum: 82fa753e4ddf566e8a40eaa444092a0bc1f7c1732061c31ea38aaffd802522a3
+Description:  Translation for luci-app-openvpn - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-p910nd-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-p910nd
+Source: feeds/luci/applications/luci-app-p910nd
+SourceName: luci-i18n-p910nd-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 701
+Filename: luci-i18n-p910nd-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1527
+SHA256sum: b5a9f764271dbc29f80f2b29785ed40398b88bdd3ff120a5e03ed397b97a060d
+Description:  Translation for luci-app-p910nd - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-polipo-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-polipo
+Source: feeds/luci/applications/luci-app-polipo
+SourceName: luci-i18n-polipo-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 2393
+Filename: luci-i18n-polipo-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3244
+SHA256sum: 31ad97987eac026f3ad9a3c719711a9d4de81813b35cab5bbf89091cc6a56984
+Description:  Translation for luci-app-polipo - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-privoxy-zh-cn
+Version: 1.0.6-2
+Depends: libc, luci-app-privoxy
+Source: feeds/luci/applications/luci-app-privoxy
+SourceName: luci-i18n-privoxy-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 4856
+Filename: luci-i18n-privoxy-zh-cn_1.0.6-2_all.ipk
+Size: 5664
+SHA256sum: 5fae7e67a62fa0449655df86e36003e35a669e4a558669dcf58c68e218b47958
+Description:  Translation for luci-app-privoxy - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-qos-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-qos
+Source: feeds/luci/applications/luci-app-qos
+SourceName: luci-i18n-qos-zh-cn
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 1025
+Filename: luci-i18n-qos-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1878
+SHA256sum: 8402462ed6e8b9d176907f1604f45c2cc23406f543fd333e5b289107a8168ad6
+Description:  Translation for luci-app-qos - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-samba-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-samba
+Source: feeds/luci/applications/luci-app-samba
+SourceName: luci-i18n-samba-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1219
+Filename: luci-i18n-samba-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2062
+SHA256sum: 273717939ef5798ae333e6671fd3088293fa84a843c1ebf29fcfa1fc05641157
+Description:  Translation for luci-app-samba - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-splash-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-splash
+Source: feeds/luci/applications/luci-app-splash
+SourceName: luci-i18n-splash-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1917
+Filename: luci-i18n-splash-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2761
+SHA256sum: 75bcdcdebef8ac17a8b139c2d1e7177db1b1f95619f14c2e08e3340a77113117
+Description:  Translation for luci-app-splash - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-sqm-zh-cn
+Version: 1.4.0-9
+Depends: libc, luci-app-sqm
+Source: feeds/luci/applications/luci-app-sqm
+SourceName: luci-i18n-sqm-zh-cn
+Section: luci
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Architecture: all
+Installed-Size: 1936
+Filename: luci-i18n-sqm-zh-cn_1.4.0-9_all.ipk
+Size: 2807
+SHA256sum: 3f2afa2ac08e8295debd4f6838051adb3f814c9ecf3d3f25b8217766901c1234
+Description:  Translation for luci-app-sqm - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-statistics-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-statistics
+Source: feeds/luci/applications/luci-app-statistics
+SourceName: luci-i18n-statistics-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 7778
+Filename: luci-i18n-statistics-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 8654
+SHA256sum: 4761e33c63399b7c39bbc7448fe4eb574cec742a1c7fa3e84961e5d8e893d78f
+Description:  Translation for luci-app-statistics - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-tinyproxy-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-tinyproxy
+Source: feeds/luci/applications/luci-app-tinyproxy
+SourceName: luci-i18n-tinyproxy-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 2777
+Filename: luci-i18n-tinyproxy-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3586
+SHA256sum: 2b0cd4858da5889adebd5c471a0800b4502eeeeec929b53cece76ac8c0144ff3
+Description:  Translation for luci-app-tinyproxy - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-transmission-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-transmission
+Source: feeds/luci/applications/luci-app-transmission
+SourceName: luci-i18n-transmission-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 2573
+Filename: luci-i18n-transmission-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3414
+SHA256sum: ec904b738e4b8ab419ca78c2bb20417cba76c29f9d1da423b25b6881f379ee90
+Description:  Translation for luci-app-transmission - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-uhttpd-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-uhttpd
+Source: feeds/luci/applications/luci-app-uhttpd
+SourceName: luci-i18n-uhttpd-zh-cn
+License: Apache-2.0
+Section: luci
+Maintainer: Daniel Dickinson <openwrt@daniel.thecshore.com>
+Architecture: all
+Installed-Size: 2335
+Filename: luci-i18n-uhttpd-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3240
+SHA256sum: 175933af525e1ff24401b74a48dca79c283aa229749f8586fddd1975fdb49050
+Description:  Translation for luci-app-uhttpd - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-upnp-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-upnp
+Source: feeds/luci/applications/luci-app-upnp
+SourceName: luci-i18n-upnp-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1608
+Filename: luci-i18n-upnp-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2456
+SHA256sum: d89234c562fe01cd892e089f28106f39d9f926711b714277f245e0def240e819
+Description:  Translation for luci-app-upnp - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-vnstat-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-vnstat
+Source: feeds/luci/applications/luci-app-vnstat
+SourceName: luci-i18n-vnstat-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 848
+Filename: luci-i18n-vnstat-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1692
+SHA256sum: 871dcb676e872040e392dad3048a191557b621eb5ffd77556f4755df7b2f7ca0
+Description:  Translation for luci-app-vnstat - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-vpnbypass-zh-cn
+Version: git-20.343.54716-6fc079f-4
+Depends: libc, luci-app-vpnbypass
+Source: feeds/luci/applications/luci-app-vpnbypass
+SourceName: luci-i18n-vpnbypass-zh-cn
+License: GPL-3.0+
+Section: luci
+Maintainer: Stan Grishin <stangri@melmac.net>
+Architecture: all
+Installed-Size: 775
+Filename: luci-i18n-vpnbypass-zh-cn_git-20.343.54716-6fc079f-4_all.ipk
+Size: 1657
+SHA256sum: 05e1af07f4900dee65b5f5d38cf5968ba95e11d36fbda6c1e42dd9efa0810004
+Description:  Translation for luci-app-vpnbypass - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-watchcat-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-watchcat
+Source: feeds/luci/applications/luci-app-watchcat
+SourceName: luci-i18n-watchcat-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1030
+Filename: luci-i18n-watchcat-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1877
+SHA256sum: 185e6c2087b812801d4486cf16c88b0a426091bd1ab23d7ab56e90c1efaf3b45
+Description:  Translation for luci-app-watchcat - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-wifischedule-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-wifischedule
+Source: feeds/luci/applications/luci-app-wifischedule
+SourceName: luci-i18n-wifischedule-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 1247
+Filename: luci-i18n-wifischedule-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2089
+SHA256sum: 84a901d8657807851fa8409388b22618752526ee66627fa8c1779bb9960cb8df
+Description:  Translation for luci-app-wifischedule - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-wireguard-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-wireguard
+Source: feeds/luci/applications/luci-app-wireguard
+SourceName: luci-i18n-wireguard-zh-cn
+Section: luci
+Maintainer: Dan Luedtke <mail@danrl.com>
+Architecture: all
+Installed-Size: 923
+Filename: luci-i18n-wireguard-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1795
+SHA256sum: 063a21235b3accf3412204e8f604b7410ee172061c72056088a38241702fac07
+Description:  Translation for luci-app-wireguard - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-wol-zh-cn
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-app-wol
+Source: feeds/luci/applications/luci-app-wol
+SourceName: luci-i18n-wol-zh-cn
+Section: luci
+Architecture: all
+Installed-Size: 865
+Filename: luci-i18n-wol-zh-cn_git-20.343.54716-6fc079f-1_all.ipk
+Size: 1712
+SHA256sum: dd69b8fb7976b8a8e1b94a15fb2fd62c7f7a69fba369510362816cc8c82e4b29
+Description:  Translation for luci-app-wol - 简体中文 (Simplified Chinese)
+
+Package: luci-lib-httpclient
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base, luci-lib-nixio
+Source: feeds/luci/libs/luci-lib-httpclient
+SourceName: luci-lib-httpclient
+Section: luci
+Architecture: all
+Installed-Size: 4816
+Filename: luci-lib-httpclient_git-20.343.54716-6fc079f-1_all.ipk
+Size: 5496
+SHA256sum: add3a65a6dc3ba06765c3bbdc64b307294835d4a14df50ff8338f14ac664dc54
+Description:  HTTP(S) client library
+
+Package: luci-lib-httpprotoutils
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base
+Source: feeds/luci/libs/luci-lib-httpprotoutils
+SourceName: luci-lib-httpprotoutils
+Section: luci
+Architecture: all
+Installed-Size: 2538
+Filename: luci-lib-httpprotoutils_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3238
+SHA256sum: 53798e7cabec99458051c5c9fb27d7932243a9ecd70f5721bfec53cb38d2f0ef
+Description:  HTTP protocol utility functions
+
+Package: luci-lib-ip
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, liblua5.1.5, libnl-tiny
+Source: feeds/luci/libs/luci-lib-ip
+SourceName: luci-lib-ip
+License: Apache-2.0
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 9011
+Filename: luci-lib-ip_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 9770
+SHA256sum: b06b5c57a8b5c46be8000071e1716dd4a548dbcf99ec0deeb59c13b0e78d9925
+Description:  Lua library for IP calculation and routing information
+
+Package: luci-lib-json
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/libs/luci-lib-json
+SourceName: luci-lib-json
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 3137
+Filename: luci-lib-json_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3850
+SHA256sum: b1bbde1227bcf40e27baf892138cabdd3ccc1fe82ca6992cea44456b3f861746
+Description:  LuCI JSON library
+
+Package: luci-lib-jsonc
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, liblua5.1.5, libjson-c4
+Source: feeds/luci/libs/luci-lib-jsonc
+SourceName: luci-lib-jsonc
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 3952
+Filename: luci-lib-jsonc_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 4656
+SHA256sum: a1b866c013ea77bf6b8c490004edbd4a9ce24894069a6c9d12556abedba79bc1
+Description:  Lua binding for JSON-C
+
+Package: luci-lib-luaneightbl
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, liblua5.1.5
+Source: feeds/luci/libs/luci-lib-luaneightbl
+SourceName: luci-lib-luaneightbl
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 2134
+Filename: luci-lib-luaneightbl_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 2871
+SHA256sum: c20e6f0df2629b99df028d5448b214f1bb27d611e5053425d2cd94cf99101f83
+Description:  neightbl - Lua lib for IPv6 neighbors
+
+Package: luci-lib-nixio
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, liblua5.1.5
+Source: feeds/luci/libs/luci-lib-nixio
+SourceName: luci-lib-nixio
+License: Apache-2.0
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 27708
+Filename: luci-lib-nixio_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 28358
+SHA256sum: 294f90750ff0c62870c3034cffd90ebe3c6e520cb2c11f35a60de81984e18010
+Description:  NIXIO POSIX library
+
+Package: luci-mod-admin-full
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-base
+Source: feeds/luci/modules/luci-mod-admin-full
+SourceName: luci-mod-admin-full
+License: Apache-2.0
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 80359
+Filename: luci-mod-admin-full_git-20.343.54716-6fc079f-1_mipsel_24kc.ipk
+Size: 81277
+SHA256sum: 0762f6dd23a783c2e659b4d79517d31c8fb8c513dd968b6f0a969c0271703607
+Description:  LuCI Administration - full-featured for full control
+
+Package: luci-mod-freifunk
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, luci-mod-admin-full, luci-lib-json, freifunk-firewall, freifunk-common
+Source: feeds/luci/modules/luci-mod-freifunk
+SourceName: luci-mod-freifunk
+Section: luci
+Architecture: all
+Installed-Size: 19788
+Filename: luci-mod-freifunk_git-20.343.54716-6fc079f-1_all.ipk
+Size: 20543
+SHA256sum: c25b6e0199349d548a0a6f69c0a1b5fbe1e6369a2ebee468f3d0e23dac9dec7a
+Description:  LuCI Freifunk module
+
+Package: luci-proto-ppp
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/protocols/luci-proto-ppp
+SourceName: luci-proto-ppp
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 3106
+Filename: luci-proto-ppp_git-20.343.54716-6fc079f-1_all.ipk
+Size: 3802
+SHA256sum: 927ebfab1451bcab1d289df1a7fa860d036b45fd2791e7c794b9818e55a0d55d
+Description:  Support for PPP/PPPoE/PPPoA/PPtP
+
+Package: luci-proto-wireguard
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, kmod-wireguard, wireguard-tools
+Source: feeds/luci/protocols/luci-proto-wireguard
+SourceName: luci-proto-wireguard
+Section: luci
+Maintainer: Dan Luedtke <mail@danrl.com>
+Architecture: all
+Installed-Size: 1994
+Filename: luci-proto-wireguard_git-20.343.54716-6fc079f-1_all.ipk
+Size: 2740
+SHA256sum: dcd51972029339d2a8bce35215018da4b1aa9f60223c02b503fcc2a18d87a2b8
+Description:  Support for WireGuard VPN
+
+Package: luci-theme-bootstrap
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/themes/luci-theme-bootstrap
+SourceName: luci-theme-bootstrap
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 13670
+Filename: luci-theme-bootstrap_git-20.343.54716-6fc079f-1_all.ipk
+Size: 14452
+SHA256sum: 5fdfc4e26d0dadfdac6fa0e56c6a0e02416983c2346ecfff16b6a6bad05ede9f
+Description:  Bootstrap Theme (default)
+
+Package: luci-theme-material
+Version: git-20.343.54716-6fc079f-1
+Depends: libc
+Source: feeds/luci/themes/luci-theme-material
+SourceName: luci-theme-material
+Section: luci
+Architecture: all
+Installed-Size: 50544
+Filename: luci-theme-material_git-20.343.54716-6fc079f-1_all.ipk
+Size: 51438
+SHA256sum: 8a1050d5d5a872c84c8ae3963c280c03ea2dac7811b7e4ad622ecb74eea4dd83
+Description:  Material Theme
+
+Package: luci
+Version: git-20.343.54716-6fc079f-1
+Depends: libc, uhttpd, uhttpd-mod-ubus, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-proto-ppp, libiwinfo-lua, rpcd-mod-rrdns
+Source: feeds/luci/collections/luci
+SourceName: luci
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 105
+Filename: luci_git-20.343.54716-6fc079f-1_all.ipk
+Size: 900
+SHA256sum: 0a556c32c84404b2dd9a0c19279a9e620679649b53552dbdc9bd29e694cbf16a
+Description:  Standard OpenWrt set including full admin with ppp support and the default Bootstrap theme
+
+Package: meshwizard
+Version: 0.3.3
+Depends: libc, firewall
+Source: feeds/luci/contrib/package/meshwizard
+SourceName: meshwizard
+Section: luci
+Architecture: mipsel_24kc
+Installed-Size: 13266
+Filename: meshwizard_0.3.3_mipsel_24kc.ipk
+Size: 14012
+SHA256sum: 528f79f0478be508c60f2e148e52762b4af47e8831f4ac3f6175a5286e3f5f1f
+Description:  A shellscript based wizard to simplify the setup of a typical mesh node (e.g. for Freifunk.net)
+
+Package: rpcd-mod-rrdns
+Version: 20170710
+Depends: libc, rpcd, libubox20191228, libubus20191227
+Source: feeds/luci/libs/rpcd-mod-rrdns
+SourceName: rpcd-mod-rrdns
+License: Apache-2.0
+Section: libs
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Architecture: mipsel_24kc
+Installed-Size: 3808
+Filename: rpcd-mod-rrdns_20170710_mipsel_24kc.ipk
+Size: 4618
+SHA256sum: 8b0a077395021001b83842a4c3b48d8fc1bc15a9ea27649738fd2088e0d2643a
+Description:  Provides rapid mass reverse DNS lookup functionality.
+
