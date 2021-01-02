@@ -1,5 +1,6 @@
 # 说明
 
+![Build OpenWrt](https://github.com/Gladtbam/OpenWRT_Action/workflows/Build%20OpenWrt/badge.svg)  ![Build OpenWrt mt7621](https://github.com/Gladtbam/OpenWRT_Action/workflows/Build%20OpenWrt%20mt7621/badge.svg)  
 ~~所编译的固件不含任何插件，所有固件、插件和所需依赖都单独编译并已上传到本仓库相应的分支和[Gitee](https://gitee.com/sakura_bot/OpenWRT_Action)~~  
 编译的固件、~~插件和依赖~~已打包上传至[Release](https://github.com/Gladtbam/OpenWRT_Action/releases)对应的Tag
 
